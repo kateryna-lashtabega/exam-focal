@@ -1,0 +1,16 @@
+<svg id="logo.svg" xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #4b5456;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <rect id="container" class="cls-1" width="42" height="42"/>
+  <path id="F" class="cls-2" d="M237.985,1034.97h-10v-6h11.055v-4.02H223.96V1047h4.027v-7.93h10v-4.1Z" transform="translate(-211 -1014)"/>
+</svg>
