@@ -1,2 +1,2 @@
-[2018-01-27 09:58:53] layer "google +": Expected end of input but "+" found.
-[2018-01-27 09:58:53] layer "info@focal.com 1-306-222-2323": Expected end of input but "1" found.
+[2018-02-02 11:37:08] layer "google +": Expected end of input but "+" found.
+[2018-02-02 11:37:08] layer "info@focal.com 1-306-222-2323": Expected end of input but "1" found.

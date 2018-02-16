@@ -76,21 +76,24 @@ p {
     bottom: 0;
     background-color: #252e30;
     text-align: left; }
-    .ba-header__menu logo {
-      color: #fff;
+    .ba-header__menu .logo {
+      display: inline-block;
+      line-height: 70px;
       font-size: 30px;
-      font-weight: 700; }
-      .ba-header__menu logo a {
-        padding-top: 15px; }
-      .ba-header__menu logo svg {
+      font-weight: 700;
+      text-transform: uppercase; }
+      .ba-header__menu .logo-green {
+        color: #2ecc71; }
+      .ba-header__menu .logo .svg-icon {
+        background: #4b5456;
         width: 42px;
-        height: 42px; }
-
-.logo {
-  padding-top: 15px; }
+        height: 42px;
+        vertical-align: sub; }
 
 .ba-header__navigation {
   float: right; }
+  .ba-header__navigation ul {
+    margin: 0; }
   .ba-header__navigation__item {
     float: left;
     list-style: none;
@@ -104,22 +107,17 @@ p {
       .ba-header__navigation__item a:hover {
         color: #2ecc71; }
 
-.logo {
-  color: #fff;
-  font-size: 30px;
-  font-weight: 700;
-  text-transform: uppercase; }
-  .logo-green {
-    color: #2ecc71; }
-
 .ba-values {
   padding-top: 90px;
   padding-bottom: 90px; }
   .ba-values__item {
     float: left;
-    width: 33.33%; }
-    .ba-values__item:not(:last-child) {
-      padding-right: 25px; }
+    width: 33.33%;
+    padding: 0 10px; }
+    .ba-values__item:first-child {
+      padding-right: 20px; }
+    .ba-values__item:last-child {
+      padding-right: 20px; }
 
 .ba-button {
   text-transform: uppercase;
@@ -131,23 +129,25 @@ p {
   .ba-button:hover {
     background-color: #fff;
     color: #000; }
-  .ba-button--green {
-    background-color: transparent;
-    border-color: #2ecc71;
-    color: #2ecc71; }
-    .ba-button--green:hover {
-      background-color: #2ecc71;
-      color: #fff; }
-  .ba-button--black {
-    background-color: #191f21;
-    border-color: #191f21;
+
+.ba-button--green {
+  background-color: transparent;
+  border-color: #2ecc71;
+  color: #2ecc71; }
+  .ba-button--green:hover {
+    background-color: #2ecc71;
     color: #fff; }
-    .ba-button--black:hover {
-      border-color: #fff;
-      background-color: #fff;
-      color: #191f21; }
-    .ba-button--black:visited {
-      color: #fff; }
+
+.ba-button--black {
+  background-color: #191f21;
+  border-color: #191f21;
+  color: #fff; }
+  .ba-button--black:hover {
+    border-color: #fff;
+    background-color: #fff;
+    color: #191f21; }
+  .ba-button--black:visited {
+    color: #fff; }
 
 .ba-about {
   background-color: #f2f2f1; }
@@ -175,12 +175,14 @@ p {
       flex-grow: 1;
       list-style: none;
       padding-left: 68px; }
-      .ba-about__skills ul .ba-about__skills__item span svg {
-        width: 40px;
-        height: 40px;
+      .ba-about__skills ul .ba-about__skills__item span .svg-icon {
+        width: 38px;
+        height: 38px;
         position: absolute;
         top: 40px;
-        left: 0; }
+        left: 0;
+        fill: #2ecc71;
+        fill-rule: evenodd; }
 
 .ba-skills {
   padding-top: 90px;
@@ -244,6 +246,8 @@ p {
 .ba-portfolio {
   padding: 93px 0 100px 0;
   position: relative; }
+  .ba-portfolio-wrapper {
+    padding-left: 40px; }
   .ba-portfolio p {
     padding-bottom: 93px; }
   .ba-portfolio__pictures {
@@ -256,10 +260,18 @@ p {
     .ba-portfolio__pictures .ba-portfolio__pictures__item {
       -ms-flex-preferred-size: 366px;
       flex-basis: 366px;
+      height: 300px;
       -webkit-box-flex: 1;
       -ms-flex-positive: 1;
       flex-grow: 1;
-      margin: 20px; }
+      margin: 0 40px 40px 0; }
+    .ba-portfolio__pictures .ba-portfolio__pictures__item:first-child {
+      -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+      flex-grow: 0;
+      -ms-flex-item-align: center;
+      align-self: center;
+      justify-self: center; }
     .ba-portfolio__pictures .ba-portfolio__pictures__item:first-child {
       background-color: #252e30; }
     .ba-portfolio__pictures ul {
@@ -279,19 +291,47 @@ p {
   position: relative;
   width: 100%;
   height: 100%; }
-  .ba-portfolio__pictures-wrapper img {
-    top: -99999px;
-    bottom: -99999px;
-    right: -99999px;
-    left: -99999px;
-    margin: auto; }
+  .ba-portfolio__pictures-wrapper a {
+    display: inline-block;
+    position: relative; }
+  .ba-portfolio__pictures-wrapper .ba-green-hover {
+    position: absolute;
+    background-color: #2ecc71;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 5;
+    pointer-events: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 50px; }
+  .ba-portfolio__pictures-wrapper a:hover {
+    opacity: .3; }
+  .ba-portfolio__pictures-wrapper a:hover .ba-green-hover {
+    opacity: .8; }
+
+.ba-portfolio__pictures-wrapper:not(:first-child) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
 
 .ba-portfolio__pictures-wrapper {
-  position: relative;
-  background-color: #2ecc71; }
-
-.ba-portfolio__pictures__item:hover, .ba-portfolio__pictures-wrapper:hover {
-  opacity: 0.5; }
+  position: relative; }
 
 .ba-portfolio__arrow {
   width: 58px;
@@ -301,9 +341,9 @@ p {
   position: absolute;
   top: 0;
   left: 50%;
-  -webkit-transform: transitionX(-50%);
-  -ms-transform: transitionX(-50%);
-  transform: transitionX(-50%); }
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%); }
 
 .ba-contact {
   background-color: #252e30;
@@ -326,12 +366,18 @@ p {
       display: block;
       padding-top: 35px; }
     .ba-contact form input {
+      margin-top: 15px;
+      color: #fff;
+      padding: 15px;
       border: 0;
       display: block;
       height: 55px;
       width: 100%;
       background-color: #4b5456; }
     .ba-contact form textarea {
+      margin-top: 15px;
+      color: #fff;
+      padding: 15px;
       border: 0;
       display: block;
       height: 280px;
@@ -356,6 +402,20 @@ p {
   .ba-footer p {
     text-transform: uppercase;
     color: #4b5456; }
+  .ba-footer .social a {
+    display: inline-block;
+    background-color: #4b5456;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    color: #191f21;
+    font-size: 17px; }
+    .ba-footer .social a i {
+      padding-top: 9px; }
+  .ba-footer .social a:not(:last-child) {
+    margin-right: 10px; }
+  .ba-footer .social a:hover {
+    color: #fff; }
 
 /* Typography */
 a,
